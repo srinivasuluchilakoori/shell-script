@@ -1,5 +1,5 @@
 #!/bin/bash
 
-DATE=$(DATE)
+DATE=$(date)
 
-echo "date and time is: ${DATE}"
+echo "date and time is: ${date}"
