@@ -7,8 +7,8 @@ SUM=$(($NUMBER1+$NUMBER2))
 
 echo "Total: $SUM"
 
-echo "how many args passed :: $#"
+echo "how many args passed:: $#"
 
-echo "all args are passed :: $@"
+echo "all args are passed:: $@"
 
-echo "script name :: $0"
+echo "script name:: $0"
