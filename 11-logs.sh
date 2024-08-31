@@ -32,7 +32,7 @@ yum install mysql -y &>> $LOGFILE
 
 VALIDATE $? "installing MYSQl"
 
-yum install guiyit -y &>> $LOGFILE
+yum install git -y &>> $LOGFILE
 
 VALIDATE $? "installing GIT"
 
