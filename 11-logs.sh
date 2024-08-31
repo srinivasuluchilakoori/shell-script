@@ -34,6 +34,6 @@ VALIDATE $? "installing MYSQl"
 
 yum install git -y &>> $LOGFILE
 
-VALIDATE $? "installing ggGIT"
+VALIDATE $? "installing ggGuIgT"
 
 
