@@ -4,7 +4,13 @@ ID=$(id -u)
 
 R="\e[31m"
 G="\e[32m"
+Y="\e[33m"
 N="\e[0m"
+
+TIMESTAMP=$(date +%F---%H-%M-%S)
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
+
+echo "Script started executing at $TIMESTAMP" &>> $LOGFILE
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -27,10 +33,13 @@ echo "All arguments are passed: $@"
 
 for package in $@
 do
-    yum list installed $package
+    yum list installed $package &>> $LOGFILE
     if [ $? -ne 0 ]
     then
-        yum install $package -y
+        yum install $package -y &>> $LOGFILE
         VALIDATE $? "installation of $package"
+    else
+        echo "$package is already installed ... $Y skipping $N"
+    fi
 done
 
