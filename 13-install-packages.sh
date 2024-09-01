@@ -29,7 +29,7 @@ else
     echo -e "$G you are root user $N"
 fi
 
-echo "All arguments are passed: $@"
+#echo "All arguments are passed: $@"
 
 for package in $@
 do
@@ -39,7 +39,7 @@ do
         yum install $package -y &>> $LOGFILE
         VALIDATE $? "installation of $package"
     else
-        echo "$package is already installed ... $Y skipping $N"
+        echo -e "$package is already installed ... $Y skipping $N"
     fi
 done
 
